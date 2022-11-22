@@ -1,0 +1,108 @@
+﻿@model List<UsuarioModel>
+@{
+    ViewData["Title"] = "User Page";
+}
+<br />
+<br />
+<br />
+<partial name="_Carousel" />
+<br />
+<br />
+<br />
+<br />
+
+
+<div class="text-center">
+    <h1 class="display-4">Lista de Usuários</h1>
+    <p>Seja bem vindo</p>
+</div>
+
+@if (TempData["MensagemDeSucesso"] != null)
+{
+    <div class="alert alert-success" role="alert">
+        <button type="button" class="btn btn-danger btn-sm close-alert" data-bs-dismiss="alert" aria-label="Close">X</button>
+        @TempData["MensagemDeSucesso"]
+    </div>
+}
+
+@if (TempData["MensagemDeErro"] != null)
+{
+    <div class="alert alert-danger" role="alert">
+        <button type="button" class="btn btn-danger btn-sm close-alert" data-bs-dismiss="alert" aria-label="Close">X</button>
+        @TempData["MensagemDeErro"]
+    </div>
+}
+
+
+
+<table class="table table-striped" id="table-usuario">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Nome</th>
+            <th scope="col">Email</th>
+            <th scope="col">Perfil</th>
+            <th scope="col">Login</th>
+            <th></th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @if (Model != null && Model.Any())
+        {
+            @foreach (UsuarioModel items in Model)
+            {
+                <tr>
+                    <th scope="row">1</th>
+                    <td>@items.Nome</td>
+                    <td>@items.Email</td>
+                    <td>@items.Perfil</td>
+                    <td>@items.Login</td>
+                    <td>
+                        <div class="btn-group" role="group" aria-label="Basic outlined example">
+                            <button role="button" class="btn btn-outline-primary"> <a asp-route-id="@items.Id" asp-controller="Usuario" asp-action="Editar">Editar </a></button>
+                            <button role="button" class="btn btn-outline-primary"> <a asp-route-id="@items.Id" asp-controller="Usuario" asp-action="Apagar">Apagar </a></button>
+                        </div>
+                    </td>
+                </tr>
+            }
+        }
+    </tbody>
+</table>
+
+<br />
+<br />
+
+
+<div class="card-group">
+    <div class="card">
+        <a asp-controller="Contato" asp-action="Criar">
+            <img src="~/Imagens/Card1.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">Cadastre um contato Agora</h5>
+                <p class="card-text">Click aqui para cadastra um contato.</p>
+                <p class="card-text"><small class="text-muted">vamos cadastrar</small></p>
+            </div>
+        </a>
+    </div>
+
+    <div class="card">
+        <a asp-controller="Usuario" asp-action="Cria">
+            <img src="~/Imagens/Card2.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">Cadastre um novo usuario</h5>
+                <p class="card-text">Click aqui para cadastra um novo usuario.</p>
+                <p class="card-text"><small class="text-muted">Vamos cadastrar</small></p>
+            </div>
+        </a>
+    </div>
+    <div class="card">
+        <img src="~/Imagens/Card3.jpg" class="card-img-top" alt="...">
+        <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+        </div>
+    </div>
+</div>
+

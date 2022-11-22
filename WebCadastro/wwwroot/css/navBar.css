@@ -1,0 +1,47 @@
+body {
+    font-family: 'Roboto';
+}
+
+.row {
+    margin: 0;
+}
+
+.container {
+    padding: 70px 0;
+}
+
+p, li {
+    color: darkgray;
+    font-size: 14px;
+}
+
+/*Barra de navegação*/
+header, .navbar {
+    background-color: #353d41;
+}
+
+#nav-container {
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+#logo {
+    width: 75px;
+}
+
+.navbar-brand { /*mudando a cor do texto logo*/
+    padding: 0;
+    color: #fff;
+}
+
+    .navbar-brand:hover {
+        color: #fff;
+    }
+
+#navbar-links a {
+    color: #fff;
+}
+
+.navbar-expand-lg .navbar-nav .nav-link {
+    padding: 1 rem .8rem;
+}

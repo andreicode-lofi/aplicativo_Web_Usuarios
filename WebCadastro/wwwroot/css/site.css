@@ -1,0 +1,69 @@
+html {
+  font-size: 14px;
+
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+    margin-bottom: 60px;
+    background-image: url("/Imagens/FundoSite.jpg");
+   
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+
+    font-family: 'Roboto';
+}
+
+.Login {
+    border-style: solid;
+    border-width: medium;
+    border-radius: 10px;
+    border-color: #0094ff;
+    text-align: center;
+    color: #0094ff;
+    margin-top: 150px;
+    background-color: aliceblue;
+    height: 450px;
+}
+
+
+
+
+.imputLogin {
+    margin-left: 432px;
+    border-radius: 5px;
+}
+
+
+
+
+.table-striped {
+    
+    background-color:#fefdfa;
+}
+.card-group {
+    box-shadow: 4px 4px 4px 4px rgba(0, 0, 0, 0.4);
+    background-color: #fffef6;
+}
+
+#carouselExampleControls {
+  
+    width: 100%;
+    
+}
+span{
+    color: red;
+
+}
+

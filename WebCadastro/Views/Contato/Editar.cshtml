@@ -1,0 +1,48 @@
+﻿@model ContatoModel
+@{
+}
+
+<div class="text-center">
+    <h1 class="display-4">Editar contato</h1>
+
+    @if(TempData["MensagemErroEditar"] != null)
+    {
+        <div class="alert alert-success" role="alert">
+
+            @TempData["MensagemErroEditar"]
+            <button type="button" class="btn btn-danger btn-sm close-alert">X</button>
+        </div>
+        
+    }
+    
+
+
+    <form asp-controller="Contato" asp-action="Atualizar" method="Post">
+
+        <!--aqui vamos pegar o id do registro e passar junto com o form-->
+        <!--tipy= hiddon deixa invisivel-->
+        <input type="hidden" asp-for="ContatoId"/>
+
+        <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label d-grid gop-2 d-md-flex justify-content-md-start">Nome</label>
+            <input type="text" asp-for="Nome" class="form-control" >
+            <span asp-validation-for="Nome"></span>
+           
+        </div>
+        <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label d-grid gop-2 d-md-flex justify-content-md-start">Email</label>
+            <input type="text" asp-for="Email" class="form-control" >
+            <span asp-validation-for="Email"></span>
+        </div>
+         <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label d-grid gop-2 d-md-flex justify-content-md-start">Celular</label>
+            <input type="tel" asp-for="Telefone" class="form-control" >
+            <span asp-validation-for="Telefone"></span>
+        </div>
+
+        <button type="submit" class="btn btn-primary d-grid gop-2 d-md-flex justify-content-md-start">Alterar</button>
+        <button type="submit" class="btn btn-primary d-grid gop-2 d-md-flex justify-content-md-start" asp-controller="Contato" asp-action="Index">Contatos</button>
+
+    </form>
+
+</div>

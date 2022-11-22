@@ -1,0 +1,33 @@
+﻿@model ContatoModel
+@{
+}
+
+
+<div class="text-center">
+    <h1 class="display-4">Criar contato</h1>
+
+    <form asp-controller="Contato" asp-action="Criar" method="post">
+        <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label d-grid gop-2 d-md-flex justify-content-md-start">Nome</label>
+            <input asp-for="Nome" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Nome completo">
+            <span asp-validation-for="Nome"></span>
+        </div>
+
+        <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label d-grid gop-2 d-md-flex justify-content-md-start">Email</label>
+            <input asp-for="Email" type="email" class="form-control" id="exampleInputPassword1" placeholder="Email.com">
+            <span asp-validation-for="Email"></span>
+        </div>
+
+         <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label d-grid gop-2 d-md-flex justify-content-md-start">Telefone celular</label>
+            <input asp-for="Telefone" type="tel" class="form-control" id="exampleInputPassword1" placeholder="(xx) xxxx-xxxx">
+            <span asp-validation-for="Telefone"></span>
+        </div>
+
+         <button type="submit" class="btn btn-primary d-grid gop-2 d-md-flex justify-content-md-start" asp-controller="Contato" asp-action="Criar">Adicionar</button>
+        <br />
+         <button type="submit" class="btn btn-primary d-grid gop-2 d-md-flex justify-content-md-start" asp-controller="Contato" asp-action="Index">Contatos</button>
+    </form>
+
+</div>

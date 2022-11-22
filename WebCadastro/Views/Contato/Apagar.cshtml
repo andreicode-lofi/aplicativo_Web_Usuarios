@@ -1,0 +1,13 @@
+﻿@model ContatoModel
+@{
+}
+
+<div class="text-center">
+    <h1>Realmente deseja apagar o contato (@Model.Nome)</h1>
+
+  <a class="btn btn-primary" role="button" asp-controller="Contato" asp-action="Index">Cancelar</a>
+  <a class="btn btn-danger" role="button" asp-route-id="@Model.ContatoId" asp-controller="Contato" asp-action="ApagarConfirma">Confirma</a>
+
+</div>
+
+

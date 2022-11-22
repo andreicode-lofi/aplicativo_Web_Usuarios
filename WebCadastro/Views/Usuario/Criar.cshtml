@@ -1,0 +1,53 @@
+﻿@using WebCadastro.Enums
+@model UsuarioModel
+@{
+}
+
+
+<div class="text-center">
+    <h1 class="display-4">Criar usuários</h1>
+
+    <form asp-controller="Usuario" asp-action="Criar" method="post">
+        <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label d-grid gop-2 d-md-flex justify-content-md-start">Nome</label>
+            <input asp-for="Nome" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Nome completo">
+            <span asp-validation-for="Nome"></span>
+        </div>
+
+        <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label d-grid gop-2 d-md-flex justify-content-md-start">Email</label>
+            <input asp-for="Email" type="email" class="form-control" id="exampleInputPassword1" placeholder="Digite o e-mail do usuário">
+            <span asp-validation-for="Email"></span>
+        </div>
+
+
+        <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label d-grid gop-2 d-md-flex justify-content-md-start">Login</label>
+            <input asp-for="Login" type="text" class="form-control" id="exampleInputPassword1" placeholder="User">
+            <span asp-validation-for="Login"></span>
+        </div>
+
+        <div class="form-group">
+             <label for="nome" class="form-label">Perfil</label>
+            <select asp-for="Perfil" class="form-control">
+                <option value="">Selecione</option>
+                <option value="@PerfilEnum.Admin">Administrador</option><!--vamos puxar o valor do Enum que eu criei na pasta Enums/PerfilEnums-->
+                <option value="@PerfilEnum.Padrao">Padrão</option>
+            </select>
+            @Html.ValidationMessageFor(x => x.Perfil)
+        </div>
+
+         <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label d-grid gop-2 d-md-flex justify-content-md-start">Senha</label>
+            <input asp-for="Senha" type="password" class="form-control" id="exampleInputPassword1" placeholder="**********">
+            <span asp-validation-for="Senha"></span>
+        </div>
+
+
+         <button type="submit" class="btn btn-primary d-grid gop-2 d-md-flex justify-content-md-start">Adicionar</button>
+         <button type="submit" class="btn btn-primary d-grid gop-2 d-md-flex justify-content-md-start" asp-controller="Contato" asp-action="Index">Contatos</button>
+        
+       
+    </form>
+
+</div>

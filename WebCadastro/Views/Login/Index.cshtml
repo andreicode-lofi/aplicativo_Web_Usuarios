@@ -1,0 +1,47 @@
+﻿@model LoginModel;
+@{
+    Layout = "_LayoutDeslogada";
+    ViewData["Title"] = "Login";
+}
+
+<br />
+<br />
+
+
+   @if (TempData["MensagemDeSucesso"] != null)
+        {
+            <div class="alert alert-success" role="alert">
+                <button type="button" class="btn btn-danger btn-sm close-alert" data-bs-dismiss="alert" aria-label="Close">X</button>
+                @TempData["MensagemDeSucesso"]
+            </div>
+        }
+
+        @if (TempData["MensagemDeErro"] != null)
+        {
+            <div class="alert alert-danger" role="alert">
+                <button type="button" class="btn btn-danger btn-sm close-alert" data-bs-dismiss="alert" aria-label="Close">X</button>
+                @TempData["MensagemDeErro"]
+            </div>
+        }
+
+<div class="container">
+<div class="Login">
+    <form asp-controller="Login" asp-action="Entar" method="post">
+
+        <img class="loginImg" src="./Imagens/login.png"/>
+        <div class="imputLogin mb-4 col-md-4">
+            <label asp-for="Login" class="form-label">Login</label>
+            <input type="text" asp-for="Login" class="form-control col-md-2" aria-describedby="emailHelp">
+            @Html.ValidationMessageFor(x => x.Login)
+
+        </div>
+        <div class="imputLogin mb-2 col-md-4 ">
+            <label asp-for="Senha" class="form-label">Senha</label>
+            <input asp-for="Senha" type="password" class="form-control ">
+            @Html.ValidationMessageFor(x => x.Senha)
+            <div id="LoginHelp" class="form-text">Nunca compartilharemos seu login e senha com mais ninguém..</div>
+        </div>
+          <button type="submit" class="btn btn-primary">Entrar</button>
+    </form>
+</div>
+</div>>
